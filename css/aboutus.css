@@ -1,0 +1,108 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Arial",sans-serif;
+}
+.exe{
+    background-color: white;
+    overflow: hidden;
+}
+.heading h1{
+    color: orange;
+    font-size: 55px;
+    text-align: center;
+    margin-top: 35px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 60px auto;
+}
+.exe-content{
+    flex: 1;
+    width: 600px;
+    margin: 0px 25px;
+    animation: fadeInUp 2s ease;
+}
+.exe-content h2{
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: grey;
+}
+.exe-content p{
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    color: gray;
+}
+.exe-content button{
+    display: inline-block;
+    background-color: orange;
+    color: black;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+.exe-content button:hover{
+    background-color: rgb(136, 205, 136);
+    transform: scale(1.1);
+}
+.exe-image{
+    flex: 1;
+    width: 600px;
+    margin: auto;
+    animation: fadeInRight 2s ease;
+}
+img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+@media screen and(max-width:768px){
+    .heading h1{
+        font-size: 45px;
+        margin-top: 30px;
+    }
+    .exe{
+        margin: 0px;
+    }
+    .container{
+        width: 100%;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px 4px;
+    }
+    .exe-content{
+        width: 100%;
+        margin: 35px 0px;
+    }
+    .exe-content h2{
+        font-size: 30px;
+    }
+    .exe-content p{
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .exe-content button{
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+    .exe-image{
+        width: 100%;
+    }
+}
+@keyframes fadeInUp{
+    0%{
+        opacity: 0;
+        transform: translate(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
