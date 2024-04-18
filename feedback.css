@@ -1,0 +1,40 @@
+body{
+    background:rgb(202, 200, 200);
+    background-image: url(./pblimg.jpg);
+}
+.feedback-form{
+    background: rgba(255, 255, 255, 0.521);
+    margin-top: 7%;
+    margin-bottom: 3%;
+}
+.feedback-form .form-control{
+    border-radius: 1rem;
+}
+.feedback-form form{
+    padding: 14%;
+}
+.feedback-form form .row{
+    margin-bottom: -7%;
+}
+.feedback-form h2{
+    margin-bottom: 8%;
+    margin-top: -10%;
+    text-align: center;
+    color: rgb(8, 8, 10);
+}
+.feedback-form .btnFeedback{
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.5%;
+    background: orange;
+    color: white;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+.feedback-form p{
+    margin-top: 10px;
+    margin-bottom: 3px;
+    color: rgb(3, 3, 3);
+}
