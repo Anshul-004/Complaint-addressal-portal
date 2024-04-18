@@ -4,7 +4,7 @@
     font-family: Century Gothic;
 }
 header{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.272),rgba(0, 0, 0, 0.272)), url(./pblimg.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.272),rgba(0, 0, 0, 0.272)), url(../assets/background.jpg);
     height: 100vh;
     background-size: cover;
     background-position: center;

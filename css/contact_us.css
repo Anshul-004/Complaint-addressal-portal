@@ -6,7 +6,7 @@
 }
 .contact
 { 
-    background-image: url(./pblimg.jpg);
+    background-image: url(../assets/background.jpg);
     min-height: 100vh;
     background-color: rgb(219, 234, 239);
     padding: 50px;
