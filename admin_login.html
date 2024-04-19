@@ -1,74 +1,80 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
-    
-    
-    <title>sign</title>
+    <title>Admin Login</title>
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
 </head>
+
 <body>
-<div class="container">
-    <div class="form-box">
-        <h1 id="title">SIGN-UP</h1>
-        <form>
-            <div class="input-group">
-                <div class="input-field" id="namefield">
-                    <input type="text" placeholder="Name">
-                    
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">SIGN-UP</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field" id="namefield">
+                        <input type="text" placeholder="Name">
+
+                    </div>
+                    <div class="input-field" id="adminfield">
+                        <input type="text" placeholder="Admincode">
+
+                    </div>
+
+                    <div class="input-field">
+                        <input type="email" placeholder="Email">
+
+                    </div>
+
+                    <div class="input-field">
+                        <input type="tel" placeholder="Pincode" required>
+
+                    </div>
+
+                    <div class="input-field">
+                        <input type="password" placeholder="Password">
+
+                    </div>
+                    <p>
+                        Lost password<a href="#">Click here!</a>
+                    </p>
                 </div>
-                <div class="input-field" id="adminfield">
-                    <input type="text" placeholder="Admincode">
-                    
+                <div class="btn-field">
+                    <button type="button" id="signupbtn">Sign-up</button>
+                    <button type="button" class="disable" id="signinbtn">Sign-in</button>
                 </div>
-                
-                <div class="input-field">
-                    <input type="email" placeholder="Email">
-                    
-                </div>
-                
-                <div class="input-field">
-                    <input type="tel" placeholder="Pincode" required>
-                    
-                </div>
-                
-                <div class="input-field">
-                    <input type="password" placeholder="Password">
-                    
-                </div>
-                <p>
-                    Lost password<a href="#">Click here!</a>
-                </p>
-            </div>
-            <div class="btn-field">
-                <button type="button" id="signupbtn">Sign-up</button>
-                <button type="button" class="disable" id="signinbtn">Sign-in</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
-<script>
-let signupbtn = document.getElementById("signupbtn");
-let signinbtn = document.getElementById("signinbtn");
-let namefield = document.getElementById("namefield");
-let adminfield = document.getElementById("adminfield");
-let title = document.getElementById("title");
-    
-signinbtn.onclick = function(){
-    namefield.style.maxHeight = "0";
-    adminfield.style.maxHeight = "0";
-    title.innerHTML = "Sign In";
-    signupbtn.classList.add("disable");
-    signinbtn.classList.remove("disable");
-}
-signupbtn.onclick = function(){
-    namefield.style.maxHeight = "60px";
-    adminfield.style.maxHeight = "60px";
-    title.innerHTML = "Sign Up";
-    signupbtn.classList.remove("disable");
-    signinbtn.classList.add("disable");
-}
-    
-</script>
+    <script>
+        let signupbtn = document.getElementById("signupbtn");
+        let signinbtn = document.getElementById("signinbtn");
+        let namefield = document.getElementById("namefield");
+        let adminfield = document.getElementById("adminfield");
+        let title = document.getElementById("title");
+
+        signinbtn.onclick = function () {
+            namefield.style.maxHeight = "0";
+            adminfield.style.maxHeight = "0";
+            title.innerHTML = "Sign In";
+            signupbtn.classList.add("disable");
+            signinbtn.classList.remove("disable");
+        }
+        signupbtn.onclick = function () {
+            namefield.style.maxHeight = "60px";
+            adminfield.style.maxHeight = "60px";
+            title.innerHTML = "Sign Up";
+            signupbtn.classList.remove("disable");
+            signinbtn.classList.add("disable");
+        }
+
+    </script>
 </body>
+
 </html>

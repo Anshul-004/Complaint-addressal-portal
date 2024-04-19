@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Century Gothic;
+    font-family: 'kanit', sans-serif;
 }
 header{
     background-image:linear-gradient(rgba(0, 0, 0, 0.272),rgba(0, 0, 0, 0.272)), url(../assets/background.jpg);
