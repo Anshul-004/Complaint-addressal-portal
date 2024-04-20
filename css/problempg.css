@@ -8,7 +8,7 @@
 /* navbar */
 nav {
   height: 10vh;
-  background-color: rebeccapurple;
+  background-color: #1a2238;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,21 +20,21 @@ ul {
 
 ul li a {
   text-decoration: none;
-  color: white;
+  color: whitesmoke;
   padding: 0.313rem 1.25rem;
   border: 1px solid transparent;
   transition: 0.6s ease;
 }
 ul li a:hover {
-  background-color: white;
-  color: black;
+  background-color: #eba63f;
+  color: whitesmoke;
 }
 ul li.active a {
-  background-color: white;
-  color: black;
+  background-color: #eba63f;
+  color: #f7f4e9;
 }
 .logo {
-  color: white;
+  color: #e40c2b;
   margin-left: 1.5rem;
 }
 .nav-items {
@@ -42,26 +42,79 @@ ul li.active a {
 }
 
 body {
-  background: rgb(202, 200, 200);
-  background-image: url(../assets/background.jpg);
-}
-.container {
-  background: rgba(255, 255, 255, 0.521);
-  margin-top: 4%;
-  margin-bottom: 3%;
-  margin-left: 2%;
-}
-.container .form-box {
-  border-radius: 0.1rem;
+  background: #1a2238;
+  height: 100vh;
+  width: 100vw;
 }
 
-.container .input-field {
-  background-color: rgba(245, 245, 245, 0);
-  margin: 15px 0;
-  border-radius: 3px;
+.container {
   display: flex;
+  justify-content: center;
   align-items: center;
-  max-height: 120rem;
-  transition: max-height 0.5s;
-  overflow: hidden;
+  width: 100vw;
+  height: fit-content;
 }
+
+.form-box h1{
+  color: #eba63f;
+  width: 100vw;
+}
+
+.input-group .input-field{
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.input-field input{
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  /* width: 40%; */
+}
+
+/* #email {
+  width: 99%;
+} */
+#lname, #city{
+  margin-left: 1rem;
+}
+
+.input-group{
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+h1{
+  text-align: center;
+}
+
+.form-box textarea{
+  height: 15vh;
+  width: 30%;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  resize: none;
+  overflow: scroll;
+  border-radius: 5px;
+}
+.form-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-field button {
+  padding: 0.5rem 1rem;
+  background-color: #00a2ff;
+  border: none;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+.btn-field button:hover{
+  border: 1px solid black;
+}
+
+#cancel{
+  margin-left: 10rem;
+}
+

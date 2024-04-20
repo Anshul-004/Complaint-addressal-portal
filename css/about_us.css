@@ -4,10 +4,13 @@
   box-sizing: border-box;
   font-family: "kanit", sans-serif;
 }
+body{
+  background: #1a2238;
+}
 /* navbar */
 nav {
   height: 10vh;
-  background-color: rebeccapurple;
+  background-color: #1a2238;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,21 +22,21 @@ ul {
 
 ul li a {
   text-decoration: none;
-  color: white;
+  color: whitesmoke;
   padding: 0.313rem 1.25rem;
   border: 1px solid transparent;
   transition: 0.6s ease;
 }
 ul li a:hover {
-  background-color: white;
-  color: black;
+  background-color: #eba63f;
+  color: whitesmoke;
 }
 ul li.active a {
-  background-color: white;
-  color: black;
+  background-color: #eba63f;
+  color: #f7f4e9;
 }
 .logo {
-  color: white;
+  color: #e40c2b;
   margin-left: 1.5rem;
 }
 .nav-items {
@@ -45,7 +48,7 @@ ul li.active a {
   overflow: hidden;
 }
 .heading h1 {
-  color: orange;
+  color: #ff6a3d;
   font-size: 55px;
   text-align: center;
   margin-top: 35px;
@@ -59,20 +62,25 @@ ul li.active a {
 }
 .exe-content {
   flex: 1;
-  width: 600px;
-  margin: 0px 25px;
-  animation: fadeInUp 2s ease;
+  width: 50vw;
+  /* margin: 0px 25px; */
+  animation: fadeInUp 1s ease;
 }
 .exe-content h2 {
-  font-size: 38px;
-  margin-bottom: 20px;
-  color: grey;
+  font-size: 2.375rem;
+  /* margin-bottom: 20px; */
+  color: #f4db7d;
 }
 .exe-content p {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.5;
-  margin-bottom: 40px;
-  color: gray;
+  /* margin-bottom: 40px; */
+  color: #f4db7d;
+  margin: 0rem 11rem;
+  text-align: center;
+}
+.exe-content :first-child {
+  margin-bottom: 2rem;
 }
 .exe-content button {
   display: inline-block;
@@ -85,14 +93,14 @@ ul li.active a {
   cursor: pointer;
 }
 .exe-content button:hover {
-  background-color: rgb(136, 205, 136);
+  /* background-color: rgb(136, 205, 136); */
   transform: scale(1.1);
 }
 .exe-image {
   flex: 1;
   width: 600px;
   margin: auto;
-  animation: fadeInRight 2s ease;
+  animation: fadeInRight 1s ease;
 }
 img {
   width: 100%;

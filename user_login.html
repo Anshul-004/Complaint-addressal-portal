@@ -21,20 +21,20 @@
                         <input type="text" placeholder="Name">
 
                     </div>
-                    
+
                     <div class="input-field">
                         <input type="email" placeholder="Email">
-                        
+
                     </div>
-                    
+
                     <div class="input-field">
                         <input type="tel" placeholder="Pincode" required>
-                        
+
                     </div>
-                    
+
                     <div class="input-field">
                         <input type="password" placeholder="Password">
-                        
+
                     </div>
                     <div class="input-field" id="confirm-password">
                         <input type="password" placeholder="Confirm Password">
@@ -43,35 +43,13 @@
                 </div>
 
                 <div class="btn-field">
-                    <button type="button" id="signupbtn">Sign-up</button>
-                    <button type="button" class="disable" id="signinbtn">Sign-in</button>
+                    <button type="button" id="signupbtn">Sign up</button>
+                    <button type="button" class="disable" id="signinbtn">Sign in</button>
                 </div>
             </form>
         </div>
     </div>
-    <script>
-        let signupbtn = document.getElementById("signupbtn");
-        let signinbtn = document.getElementById("signinbtn");
-        let namefield = document.getElementById("namefield");
-        let cnfpassword = document.getElementById("confirm-password");
-        let title = document.getElementById("title");
-
-        signinbtn.onclick = function () {
-            namefield.style.maxHeight = "0";
-            cnfpassword.style.maxHeight = "0";
-            title.innerHTML = "Sign In";
-            signupbtn.classList.add("disable");
-            signinbtn.classList.remove("disable");
-        }
-        signupbtn.onclick = function () {
-            namefield.style.maxHeight = "60px";
-            cnfpassword.style.maxHeight = "60px";
-            title.innerHTML = "Sign Up";
-            signupbtn.classList.remove("disable");
-            signinbtn.classList.add("disable");
-        }
-
-    </script>
+    <script src="./js/user_login.js"></script>
 </body>
 
 </html>

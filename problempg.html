@@ -27,53 +27,39 @@
             </ul>
         </div>
     </nav>
+
     <div class="container">
         <div class="form-box">
-            <h1 id="title">CUSTOMER INFORMATION</h1>
-            <form>
-                <div class="input-group">
+            <div class="input-group">
+                <h1 id="title">Personal Information</h1>
+                <form>
                     <div class="input-field" id="fnamefield">
-                        <input type="text" placeholder="First Name">
-
-                    </div>
-                    <div class="input-field" id="lnamefield">
-                        <input type="text" placeholder="Last Name">
-
+                        <input type="text" placeholder="First Name" id="name">
+                        <input type="text" placeholder="Last Name" id="lname">
                     </div>
 
                     <div class="input-field">
-                        <input type="email" placeholder="Email">
-
+                        <input type="email" placeholder="Email" id="email">
                     </div>
 
+                    <div class="input-field">
+                        <input type="text" placeholder="State" required id="state">
+                        <input type="text" placeholder="City" required id="city">
+                    </div>
 
-                    <div class="input-field">
-                        <input type="text" placeholder="Address" required>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" placeholder="Country" required>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" placeholder="State" required>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" placeholder="City" required>
-                    </div>
                     <div class="input-field">
                         <input type="tel" placeholder="Pincode" required>
                     </div>
-                </div>
-                <h1 id="title">COMPLAINT INFORMATION</h1>
-                <textarea name="txtMsg" class=form-box placeholder="Complaint date"
-                    style="width: 800px;height: 30px;margin-bottom:8px"></textarea>
-                <textarea name="txtMsg" class=form-box placeholder="Complaint details"
-                    style="width: 800px;height: 30px;margin-bottom:8px"></textarea>
-                <textarea name="txtMsg" class=form-box placeholder="what action needs to be taken to resolve this issue"
-                    style="width: 800px;height: 90px;margin-bottom:8px"></textarea>
-                <div class="btn-field">
+            </div>
 
-                    <button type="button" id="submit">Submit</button>
-                </div>
+            <h1 id="title">Complaint Information</h1>
+
+            <textarea name="txtMsg" class=form-box placeholder="Complaint Details"></textarea>
+
+            <div class="btn-field">
+                <button type="button" id="submit">Submit</button>
+                <button type="button" id="cancel">Cancel</button>
+            </div>
             </form>
         </div>
     </div>

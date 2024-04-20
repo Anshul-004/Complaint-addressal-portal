@@ -9,7 +9,7 @@
 /* navbar */
 nav {
   height: 10vh;
-  background-color: rebeccapurple;
+  background-color: #1a2238;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,21 +21,21 @@ ul {
 
 ul li a {
   text-decoration: none;
-  color: white;
+  color: whitesmoke;
   padding: 0.313rem 1.25rem;
   border: 1px solid transparent;
   transition: 0.6s ease;
 }
 ul li a:hover {
-  background-color: white;
-  color: black;
+  background-color: #eba63f;
+  color: whitesmoke;
 }
 ul li.active a {
-  background-color: white;
-  color: black;
+  background-color: #eba63f;
+  color: #f7f4e9;
 }
 .logo {
-  color: white;
+  color: #e40c2b;
   margin-left: 1.5rem;
 }
 .nav-items {
@@ -43,8 +43,7 @@ ul li.active a {
 }
 
 body {
-  background: #00a2ff;
-  
+  background: #1a2238;
 }
 
 .wrapper{
@@ -54,18 +53,18 @@ body {
   transform: translate(-50%,-50%);
   /* max-width: 350px; */
   width: 40%;
-  background: #fff;
-  padding: 25px;
+  background: #1a2238;
+  /* padding: 25px; */
   border-radius: 5px;
   /* box-shadow: 4px 4px 2px rgb(17, 128, 255);  */
 }
 
-.wrapper h2{
+.wrapper h1{
   text-align: center;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: #332902;
+  color: #ff6a3d;
 }
 
 .wrapper .input_field{
@@ -74,23 +73,22 @@ body {
 
 .wrapper .input_field input[type="text"],
 .wrapper textarea{
-  border: 1px solid #66dbff;
-  border-radius: 5px;
+  border: 2px solid #09b8ee;
+  border-radius:0.5rem;
   width: 100%;
   padding: 10px;
 }
 
 .wrapper textarea{
   resize: none;
-  height: 80px;
+  height: 30vh;
 }
 
 .wrapper .btn input[type="submit"]{
   border: 0px;
-  margin-top: 15px;
   padding: 10px;
   text-align: center;
-  width: 100%;
+  width: 50%;
   background: #00a2ff;
   color: #332902;
   text-transform: uppercase;
@@ -115,4 +113,24 @@ body {
 }
 .side #fname {
   margin-right:5% ;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper p {
+  font-size: 1.2rem;
+  color: #ff6a3d;
+  text-align: center;
+}
+
+.input_field input {
+  background-color: #9daaf2;
+  font-size: 1.1rem;
+}
+.input_field textarea {
+  font-size: 1.1rem;
+  background-color: #9daaf2;
 }

@@ -4,47 +4,11 @@
   font-family: "kanit", sans-serif;
   box-sizing: border-box;
 }
-/* navbar */
-nav {
-  height: 10vh;
-  background-color: rebeccapurple;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-ul {
-  list-style-type: none;
-  display: flex;
-}
-
-ul li a {
-  text-decoration: none;
-  color: white;
-  padding: 0.313rem 1.25rem;
-  border: 1px solid transparent;
-  transition: 0.6s ease;
-}
-ul li a:hover {
-  background-color: white;
-  color: black;
-}
-ul li.active a {
-  background-color: white;
-  color: black;
-}
-.logo {
-  color: white;
-  margin-left: 1.5rem;
-}
-.nav-items {
-  margin-right: 1.5rem;
-}
 
 .container {
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 50, 0.8), rgba(0, 0, 50, 0.8)),
-    url(../assets/background.jpg);
+  background: #1a2238;
   background-position: center;
   background-size: cover;
   position: relative;
@@ -55,15 +19,16 @@ ul li.active a {
   position: absolute;
   top: 50%;
   left: 50%;
+  height: fit-content;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: #1a2238;
   padding: 50px 60px 70px;
   text-align: center;
 }
 .form-box h1 {
-  font-size: 30px;
+  font-size: 3rem;
   margin-bottom: 60px;
-  color: blueviolet;
+  color: #ff6a3d;
   position: relative;
 }
 .form-box h1::after {
@@ -71,7 +36,7 @@ ul li.active a {
   width: 30px;
   height: 4px;
   border-radius: 3px;
-  background-color: blue;
+  background-color: #f4db7d;
   position: absolute;
   bottom: -12px;
   left: 60%;
@@ -86,6 +51,7 @@ ul li.active a {
   max-height: 65px;
   transition: max-height 0.5s;
   overflow: hidden;
+  
 }
 input {
   width: 100%;
@@ -93,6 +59,7 @@ input {
   border: 0;
   outline: 0;
   padding: 10px 15px;
+  font-size: 1.1rem;
 }
 .input-field i {
   margin-left: 15px;
@@ -107,6 +74,7 @@ form p {
   color: gray;
 }
 .btn-field {
+  margin-top: 2rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -121,6 +89,7 @@ form p {
   outline: 0;
   cursor: pointer;
   transition: background 1s;
+  font-size: 1.1rem;
 }
 .input-group {
   height: 280px;
