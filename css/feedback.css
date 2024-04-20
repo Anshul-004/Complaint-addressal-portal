@@ -3,45 +3,116 @@
   padding: 0;
   font-family: "kanit", sans-serif;
   box-sizing: border-box;
+  outline: none;
+}
+
+/* navbar */
+nav {
+  height: 10vh;
+  background-color: rebeccapurple;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+}
+
+ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 0.313rem 1.25rem;
+  border: 1px solid transparent;
+  transition: 0.6s ease;
+}
+ul li a:hover {
+  background-color: white;
+  color: black;
+}
+ul li.active a {
+  background-color: white;
+  color: black;
+}
+.logo {
+  color: white;
+  margin-left: 1.5rem;
+}
+.nav-items {
+  margin-right: 1.5rem;
 }
 
 body {
-  background: rgb(202, 200, 200);
-  background-image: url(../assets/background.jpg);
+  background: #00a2ff;
+  
 }
-.feedback-form {
-  background: rgba(255, 255, 255, 0.521);
-  margin-top: 7%;
-  margin-bottom: 3%;
+
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* max-width: 350px; */
+  width: 40%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  /* box-shadow: 4px 4px 2px rgb(17, 128, 255);  */
 }
-.feedback-form .form-control {
-  border-radius: 1rem;
-}
-.feedback-form form {
-  padding: 14%;
-}
-.feedback-form form .row {
-  margin-bottom: -7%;
-}
-.feedback-form h2 {
-  margin-bottom: 8%;
-  margin-top: -10%;
+
+.wrapper h2{
   text-align: center;
-  color: rgb(8, 8, 10);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #332902;
 }
-.feedback-form .btnFeedback {
-  width: 50%;
-  border: none;
-  border-radius: 1rem;
-  padding: 1.5%;
-  background: orange;
-  color: white;
-  font-weight: 600;
-  color: white;
+
+.wrapper .input_field{
+  margin-bottom: 10px;
+}
+
+.wrapper .input_field input[type="text"],
+.wrapper textarea{
+  border: 1px solid #66dbff;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+}
+
+.wrapper textarea{
+  resize: none;
+  height: 80px;
+}
+
+.wrapper .btn input[type="submit"]{
+  border: 0px;
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  background: #00a2ff;
+  color: #332902;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
 }
-.feedback-form p {
-  margin-top: 10px;
-  margin-bottom: 3px;
-  color: rgb(3, 3, 3);
+
+#error_message{
+  margin-bottom: 20px;
+  background: #fe8b8e;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+
+.side{
+  width: 100%;
+  display: flex;
+}
+.side #fname {
+  margin-right:5% ;
 }

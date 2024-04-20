@@ -4,10 +4,7 @@
 <head>
     <title>Feedback</title>
     <link rel="stylesheet" href="./css/feedback.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,51 +14,42 @@
 <link rel="stylesheet" href="feedback.css">
 
 <body>
-    <div class="container feedback-form">
-        <form method="post">
-            <h2>Drop Us A Feedback</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Phone Number">
-                    </div>
-                    <div class="form-group">
-                        <p>Was Your Problem Solved?</p>
-                        Yes<input type="radio" name="1">
-                        No<input type="radio" name="1">
-                    </div>
-                    <textarea name="txtMsg" class=form-control placeholder="Your Message or Suggestion"
-                        style="width: 800px;height: 150px;margin-bottom:8px"></textarea>
-                    <div class="form-group">
-                        <input type="submit" name="btnsubmit" class="btnFeedback" value="Send FeedBack"
-                            style="outline: none;">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" name="TxtEmail" class="form-control" placeholder="Your Email">
-                        <p>Are You Satisfied With Our Services? </p>
+    <nav>
+        <div class="logo">
+            <h2>COMPLAINTS</h2>
+        </div>
+        <div class="nav-items">
+            <ul>
+                <li class="active"><a href="./index.html">Home</a></li>
+                <li><a href="./problempg.html">Report Complaint</a></li>
+                <li class="active"><a href="./feedback.html">Contact Us</a></li>
+                <li><a href="./about_us.html">About Us</a></li>
+                <li><a href="./login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
 
-                        Yes<input type="radio" name="2">
-                        No<input type="radio" name="2">
-                    </div>
-                    <div class="form-group">
-                        <p>Rate Us Out Of 10</p>
-                        <input type="radio" name="3">
-                        <input type="radio" name="3">
-                        <input type="radio" name="3">
-                        <input type="radio" name="3">
-                        <input type="radio" name="3">
-                        <input type="radio" name="3">
-                        <input type="radio" name="3">
-                        <input type="radio" name="3">
-                        <input type="radio" name="3">
-                        <input type="radio" name="3">
-                    </div>
-                </div>
+    <div class="wrapper">
+        <h2>Feedback Form</h2>
+        <div id="error_message"></div>
+        <form id="myform" onsubmit="return validate();">
+            <div class="input_field side">
+                <input type="text" placeholder="First Name" id="fname">
+                <input type="text" placeholder="Last Name" id="lname">
+            </div>
+            
+            
+            <div class="input_field">
+                <input type="text" placeholder="Phone" id="phone">
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="Email" id="email">
+            </div>
+            <div class="input_field">
+                <textarea placeholder="Your Feedback" id="yourfeedback"></textarea>
+            </div>
+            <div class="btn">
+                <input type="submit">
             </div>
         </form>
     </div>
