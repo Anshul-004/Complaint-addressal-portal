@@ -127,10 +127,10 @@ body {
 }
 
 .input_field input {
-  background-color: #9daaf2;
+  background-color: #c7cded;
   font-size: 1.1rem;
 }
 .input_field textarea {
   font-size: 1.1rem;
-  background-color: #9daaf2;
+  background-color: #c7cded;
 }

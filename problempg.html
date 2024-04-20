@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Problem Submission page</title>
+    <title>Problem Submissions</title>
     <link rel="stylesheet" href="../css/problempg.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,6 @@
     </nav>
 
     <div class="container">
-        <div class="form-box">
             <div class="input-group">
                 <h1 id="title">Personal Information</h1>
                 <form>
@@ -50,18 +49,17 @@
                     <div class="input-field">
                         <input type="tel" placeholder="Pincode" required>
                     </div>
+
+                    <h1 id="title">Complaint Information</h1>
+
+                    <textarea name="txtMsg" class=form-box placeholder="Complaint Description"></textarea>
+
+                    <div class="btn-field">
+                        <button type="button" id="submit">Submit</button>
+                        <button type="button" id="cancel">Cancel</button>
+                    </div>
+                </form>
             </div>
-
-            <h1 id="title">Complaint Information</h1>
-
-            <textarea name="txtMsg" class=form-box placeholder="Complaint Details"></textarea>
-
-            <div class="btn-field">
-                <button type="button" id="submit">Submit</button>
-                <button type="button" id="cancel">Cancel</button>
-            </div>
-            </form>
-        </div>
     </div>
 </body>
 

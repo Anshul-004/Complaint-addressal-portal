@@ -46,7 +46,7 @@ body {
   height: 100vh;
   width: 100vw;
 }
-
+/* 
 .container {
   display: flex;
   justify-content: center;
@@ -55,66 +55,71 @@ body {
   height: fit-content;
 }
 
-.form-box h1{
-  color: #eba63f;
-  width: 100vw;
+
+
+
+
+
+
+
+*/
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.input-group .input-field{
+h1 {
+  color: #ff6a3d;
+  text-align: center;
+}
+
+.input-group .input-field {
   padding: 0.5rem;
   width: 100%;
 }
 
-.input-field input{
+.input-field input {
   border-radius: 5px;
   padding: 0.5rem 1rem;
-  /* width: 40%; */
+  font-size: 1.2rem;
+  background-color: #c7cded;
 }
 
-/* #email {
-  width: 99%;
-} */
-#lname, #city{
-  margin-left: 1rem;
-}
-
-.input-group{
+.input-group {
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
-h1{
-  text-align: center;
-}
 
-.form-box textarea{
-  height: 15vh;
-  width: 30%;
+.input-group textarea {
+  height: 19vh;
+  width: 100%;
   margin-bottom: 2rem;
-  margin-top: 2rem;
   resize: none;
   overflow: scroll;
   border-radius: 5px;
-}
-.form-box{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  font-size: 1.2rem;
+  background-color: #c7cded;
 }
 
+#email {
+  width: 100%;
+}
 .btn-field button {
   padding: 0.5rem 1rem;
   background-color: #00a2ff;
   border: none;
   outline: none;
   border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 1.1rem;
 }
 
-.btn-field button:hover{
+.btn-field button:hover {
   border: 1px solid black;
 }
-
-#cancel{
-  margin-left: 10rem;
+.btn-field{
+  display: flex;
+  justify-content: space-around;
 }
-
