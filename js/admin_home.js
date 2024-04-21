@@ -2,6 +2,11 @@
 let navlogin = document.getElementById("navlogin");
 let navlogout = document.getElementById("navlogout");
 
+if(localStorage.getItem("adminloginid") == null)
+{
+    window.location.replace("./index.html");
+}
+
 if (
   localStorage.getItem("userloginid") != null ||
   localStorage.getItem("adminloginid") != null
@@ -22,12 +27,10 @@ navlogout.addEventListener("click", () => {
 //Complaint Cards
 let card = document.getElementById("parent");
 
-
-function printdata(){
-
+function printdata() {
   let issues = localStorage.getItem("complaints");
   issues = JSON.parse(issues);
-  
+
   let issue_card = issues.map((value) => {
     return `<div class="card-body">
     <h2>${value.firstname} ${value.lastName}</h2>
@@ -44,11 +47,32 @@ function printdata(){
     <strong>Issue Faced - </strong>
     ${value.issue}
     </p>
+    <p>
+    <button type="button" id="del" data-id="${value.id}">Mark As Resolved</button>
+    </p>
     </div>`;
   });
-  
-  card.innerHTML = issue_card.join("")
-  
+
+  card.innerHTML = issue_card.join("");
+  delelement();
 }
 
 printdata();
+
+function delelement() {
+  let deletebtn = document.querySelectorAll("#del");
+
+  deletebtn.forEach((value) => {
+    value.addEventListener("click", () => {
+      let id = value.dataset.id;
+      console.log(id); //returns id as number.
+
+      let newdata = JSON.parse(localStorage.getItem("complaints"));
+      newdata = newdata.filter((temp) => {
+        return temp.id != id;
+      });
+      localStorage.setItem("complaints", JSON.stringify(newdata));
+      printdata();
+    });
+  });
+}

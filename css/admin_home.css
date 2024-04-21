@@ -51,11 +51,11 @@ ul li.active a {
 }
 
 /* body */
-.d-none{
+.d-none {
   display: none;
 }
 
-.card-parent{
+.card-parent {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -63,7 +63,7 @@ ul li.active a {
   padding: 3rem;
 }
 
-.card-body{
+.card-body {
   padding: 1rem;
   margin: 3rem;
   background-color: #293657;
@@ -73,16 +73,16 @@ ul li.active a {
   overflow: scroll;
 }
 
-.card-body h2{
+.card-body h2 {
   color: #e11433;
   text-align: center;
   font-size: 2rem;
 }
-.card-body p{
+.card-body p {
   color: #eba63f;
   text-align: center;
 }
-.card-body button{
+.card-body button {
   margin-top: 1rem;
   float: right;
   background-color: #2eb231;
@@ -91,6 +91,6 @@ ul li.active a {
   padding: 0.5rem 1rem;
 }
 
-.card-body button:active{
+.card-body button:active {
   color: white;
 }

@@ -103,7 +103,7 @@ login.addEventListener("click", () => {
     console.log("Invalid Creds");
   } else {
     localStorage.setItem("adminloginid", adminexists);
-    window.location.replace("./index.html");
+    window.location.replace("./admin_home.html");
   }
 });
 
