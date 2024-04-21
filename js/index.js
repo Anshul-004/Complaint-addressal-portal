@@ -2,7 +2,7 @@
 let navlogin = document.getElementById("navlogin");
 let navlogout = document.getElementById("navlogout");
 
-if (localStorage.getItem("userloginid") != null) {
+if (localStorage.getItem("userloginid") != null || localStorage.getItem("adminloginid") != null) {
   navlogin.classList.add("d-none");
   navlogout.classList.remove("d-none");
 } else {
@@ -13,4 +13,5 @@ if (localStorage.getItem("userloginid") != null) {
 //logout button
 navlogout.addEventListener("click", () => {
   localStorage.removeItem("userloginid");
+  localStorage.removeItem("adminloginid");
 });

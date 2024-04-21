@@ -102,4 +102,3 @@ login.addEventListener("click", () => {
     window.location.replace("./complaint.html");
   }
 });
-
