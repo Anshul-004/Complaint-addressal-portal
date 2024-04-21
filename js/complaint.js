@@ -1,0 +1,54 @@
+let fname = document.getElementById("fname");
+let lname = document.getElementById("lname");
+let pin = document.getElementById("pin");
+let email = document.getElementById("email");
+let state = document.getElementById("state");
+let city = document.getElementById("city");
+let submit = document.getElementById("submit");
+let cancel = document.getElementById("cancel");
+let issue = document.getElementById("issue");
+
+let oldInfo = [];
+submit.addEventListener("click", () => {
+  let newInfo = {
+    firstname: fname.value,
+    lastName: lname.value,
+    pin: pin.value,
+    email: email.value,
+    state: state.value,
+    city: city.value,
+    issue: issue.value,
+  };
+
+  if (
+    fname.value == "" ||
+    lname.value == "" ||
+    pin.value == "" ||
+    email.value == "" ||
+    state.value == "" ||
+    city.value == "" ||
+    issue.value == ""
+  ) {
+    return false;
+  }
+
+  let oldInfo = localStorage.getItem("complaints");
+  oldInfo = oldInfo === null ? [] : JSON.parse(oldInfo);
+
+  oldInfo.push(newInfo);
+
+  localStorage.setItem("complaints", JSON.stringify(oldInfo));
+
+  //reseting values
+  fname.value = "";
+  lname.value = "";
+  pin.value = "";
+  email.value = "";
+  state.value = "";
+  city.value = "";
+  issue.value = "";
+});
+
+cancel.addEventListener("click", () => {
+    window.location.replace("./index.html");
+});

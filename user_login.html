@@ -18,26 +18,26 @@
             <form>
                 <div class="input-group">
                     <div class="input-field" id="namefield">
-                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Name" id="name">
 
                     </div>
 
                     <div class="input-field">
-                        <input type="email" placeholder="Email">
+                        <input type="email" placeholder="Email" id="email">
 
                     </div>
 
                     <div class="input-field">
-                        <input type="tel" placeholder="Pincode" required>
+                        <input type="tel" placeholder="Pincode" required id="pin">
 
                     </div>
 
                     <div class="input-field">
-                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Password" id="pass">
 
                     </div>
-                    <div class="input-field" id="confirm-password">
-                        <input type="password" placeholder="Confirm Password">
+                    <div class="input-field" id="confirm-password" >
+                        <input type="password" placeholder="Confirm Password" id="cpass">
 
                     </div>
                 </div>
@@ -46,6 +46,8 @@
                     <button type="button" id="signupbtn">Sign up</button>
                     <button type="button" class="disable" id="signinbtn">Sign in</button>
                 </div>
+                <button type="button" class="savebtn" id="save">Save</button>
+                <button type="button" class="savebtn d-none" id="login">Login</button>
             </form>
         </div>
     </div>

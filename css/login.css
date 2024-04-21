@@ -98,3 +98,23 @@ form p {
   background: whitesmoke;
   color: gray;
 }
+
+.savebtn{
+  flex-basis: 48%;
+  background: rgb(69, 124, 218);
+  color: whitesmoke;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  width: 10vw;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+.savebtn:active{
+  color: black;
+}
+.d-none{
+  display: none;
+}

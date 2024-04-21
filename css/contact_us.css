@@ -51,12 +51,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  /* max-width: 350px; */
   width: 40%;
   background: #1a2238;
-  /* padding: 25px; */
   border-radius: 5px;
-  /* box-shadow: 4px 4px 2px rgb(17, 128, 255);  */
 }
 
 .wrapper h1{
@@ -79,6 +76,17 @@ body {
   padding: 10px;
 }
 
+.btn button{
+  border: 2px solid #09b8ee;
+  border-radius:0.5rem;
+  width: 50%;
+  padding: 10px;
+  background-color: #09b8ee;
+}
+.btn button:active{
+  border: 2px solid black;
+
+}
 .wrapper textarea{
   resize: none;
   height: 30vh;

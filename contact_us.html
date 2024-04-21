@@ -32,7 +32,7 @@
         <h1>Need To Talk ?</h1>
         <p>Do fill out the form to let us know where we messed up and how can we improve :)</p>
         <div id="error_message"></div>
-        <form id="myform" onsubmit="return validate();">
+        <form id="myform">
             <div class="input_field side">
                 <input type="text" placeholder="First Name" id="fname">
                 <input type="text" placeholder="Last Name" id="lname">
@@ -46,13 +46,14 @@
                 <input type="text" placeholder="Email" id="email">
             </div>
             <div class="input_field">
-                <textarea placeholder="Your Feedback" id="yourfeedback"></textarea>
+                <textarea placeholder="Your Feedback" id="feedback"></textarea>
             </div>
             <div class="btn">
-                <input type="submit">
+                <button type="button" id="sub-btn">Submit Query</button>
             </div>
         </form>
     </div>
+    <script src="./js/contact_us.js"></script>
 </body>
 
 </html>

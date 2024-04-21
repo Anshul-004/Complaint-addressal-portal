@@ -33,7 +33,7 @@
                 <h1 id="title">Personal Information</h1>
                 <form>
                     <div class="input-field" id="fnamefield">
-                        <input type="text" placeholder="First Name" id="name">
+                        <input type="text" placeholder="First Name" id="fname">
                         <input type="text" placeholder="Last Name" id="lname">
                     </div>
 
@@ -47,12 +47,12 @@
                     </div>
 
                     <div class="input-field">
-                        <input type="tel" placeholder="Pincode" required>
+                        <input type="tel" placeholder="Pincode" required id="pin">
                     </div>
 
                     <h1 id="title">Complaint Information</h1>
 
-                    <textarea name="txtMsg" class=form-box placeholder="Complaint Description"></textarea>
+                    <textarea name="txtMsg" class=form-box placeholder="Complaint Description" id="issue"></textarea>
 
                     <div class="btn-field">
                         <button type="button" id="submit">Submit</button>
@@ -61,6 +61,7 @@
                 </form>
             </div>
     </div>
+    <script src="./js/complaint.js"></script>
 </body>
 
 </html>
