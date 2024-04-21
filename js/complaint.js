@@ -27,7 +27,7 @@ let cancel = document.getElementById("cancel");
 let issue = document.getElementById("issue");
 
 let oldInfo = [];
-submit.addEventListener("click", () => {
+submit.addEventListener("click", async () => {
   let newInfo = {
     firstname: fname.value,
     lastName: lname.value,
@@ -50,21 +50,25 @@ submit.addEventListener("click", () => {
     return false;
   }
 
-  let oldInfo = localStorage.getItem("complaints");
-  oldInfo = oldInfo === null ? [] : JSON.parse(oldInfo);
+  // local storage replaced with MongoDB
 
-  oldInfo.push(newInfo);
-
-  localStorage.setItem("complaints", JSON.stringify(oldInfo));
+  const res = await fetch('http://localhost:3000/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newInfo),
+  });
 
   //reseting values
-  fname.value = "";
-  lname.value = "";
-  pin.value = "";
-  email.value = "";
-  state.value = "";
-  city.value = "";
-  issue.value = "";
+  if(res.ok)
+  {
+    fname.value = "";
+    lname.value = "";
+    pin.value = "";
+    email.value = "";
+    state.value = "";
+    city.value = "";
+    issue.value = "";
+  }
 });
 
 cancel.addEventListener("click", () => {

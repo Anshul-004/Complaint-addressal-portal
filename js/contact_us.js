@@ -24,7 +24,7 @@ let feedback = document.getElementById("feedback");
 let btn = document.getElementById("sub-btn");
 
 let u_feed = [];
-btn.addEventListener("click", () => {
+btn.addEventListener("click", async () => {
   let newfeedback = {
     firstName: fname.value,
     lastName: lname.value,
@@ -43,18 +43,20 @@ btn.addEventListener("click", () => {
     return false;
   }
 
-  let u_feed = localStorage.getItem("contact");
-  u_feed = u_feed === null ? [] : JSON.parse(u_feed);
+  //replacing localstorage with mongodb
+  const res = await fetch('http://localhost:3000/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newfeedback),
+  });
 
-  u_feed.push(newfeedback);
-  //   console.log(newfeedback); //current values
-
-  localStorage.setItem("contact", JSON.stringify(u_feed));
-
-  //resetting the fields
-  fname.value = "";
-  lname.value = "";
-  phone.value = "";
-  email.value = "";
-  feedback.value = "";
+  if(res.ok)
+  {
+    //resetting the fields
+    fname.value = "";
+    lname.value = "";
+    phone.value = "";
+    email.value = "";
+    feedback.value = "";
+  }
 });

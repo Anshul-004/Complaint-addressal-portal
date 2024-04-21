@@ -22,11 +22,14 @@ navlogout.addEventListener("click", () => {
 //Complaint Cards
 let card = document.getElementById("parent");
 
-let issues = localStorage.getItem("complaints");
-issues = JSON.parse(issues);
+//localstorage to MongoDB
+const getissues = async () => {
+  let req = await fetch("http://localhost:3000/");
+  let issues = await req.json();
+  console.log(issues);
 
-let issue_card = issues.map((value) => {
-  return `<div class="card-body">
+  let issue_card = issues.map((value) => {
+    return `<div class="card-body">
   <h2>${value.firstname} ${value.lastName}</h2>
   <p>
       <strong>PIN CODE</strong> - ${value.pin}
@@ -42,6 +45,10 @@ let issue_card = issues.map((value) => {
       ${value.issue}
   </p>
 </div>`;
-});
+  });
 
-card.innerHTML = issue_card.join("")
+  card.innerHTML = issue_card.join("");
+};
+
+//function call
+getissues();
