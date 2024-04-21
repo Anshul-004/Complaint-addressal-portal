@@ -46,17 +46,17 @@ body {
   background: #1a2238;
 }
 
-.wrapper{
+.wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 40%;
   background: #1a2238;
   border-radius: 5px;
 }
 
-.wrapper h1{
+.wrapper h1 {
   text-align: center;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -64,35 +64,34 @@ body {
   color: #ff6a3d;
 }
 
-.wrapper .input_field{
+.wrapper .input_field {
   margin-bottom: 10px;
 }
 
 .wrapper .input_field input[type="text"],
-.wrapper textarea{
+.wrapper textarea {
   border: 2px solid #09b8ee;
-  border-radius:0.5rem;
+  border-radius: 0.5rem;
   width: 100%;
   padding: 10px;
 }
 
-.btn button{
+.btn button {
   border: 2px solid #09b8ee;
-  border-radius:0.5rem;
+  border-radius: 0.5rem;
   width: 50%;
   padding: 10px;
   background-color: #09b8ee;
 }
-.btn button:active{
+.btn button:active {
   border: 2px solid black;
-
 }
-.wrapper textarea{
+.wrapper textarea {
   resize: none;
   height: 30vh;
 }
 
-.wrapper .btn input[type="submit"]{
+.wrapper .btn input[type="submit"] {
   border: 0px;
   padding: 10px;
   text-align: center;
@@ -106,7 +105,7 @@ body {
   cursor: pointer;
 }
 
-#error_message{
+#error_message {
   margin-bottom: 20px;
   background: #fe8b8e;
   padding: 0px;
@@ -115,15 +114,15 @@ body {
   transition: all 0.5s ease;
 }
 
-.side{
+.side {
   width: 100%;
   display: flex;
 }
 .side #fname {
-  margin-right:5% ;
+  margin-right: 5%;
 }
 
-.btn{
+.btn {
   display: flex;
   justify-content: center;
 }
@@ -141,4 +140,7 @@ body {
 .input_field textarea {
   font-size: 1.1rem;
   background-color: #c7cded;
+}
+.d-none {
+  display: none;
 }

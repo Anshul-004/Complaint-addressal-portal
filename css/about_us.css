@@ -150,3 +150,7 @@ img {
     transform: translate(0px);
   }
 }
+
+.d-none{
+  display: none;
+}

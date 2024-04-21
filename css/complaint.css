@@ -106,3 +106,7 @@ h1 {
   display: flex;
   justify-content: space-around;
 }
+
+.d-none{
+  display: none;
+}

@@ -3,7 +3,7 @@ let signinbtn = document.getElementById("signinbtn");
 let namefield = document.getElementById("namefield");
 let cnfpassword = document.getElementById("confirm-password");
 let title = document.getElementById("title");
-let login = document.getElementById("login")
+let login = document.getElementById("login");
 let save = document.getElementById("save");
 
 signinbtn.onclick = function () {
@@ -14,7 +14,6 @@ signinbtn.onclick = function () {
   signinbtn.classList.remove("disable");
   save.classList.add("d-none");
   login.classList.remove("d-none");
-  
 };
 signupbtn.onclick = function () {
   namefield.style.maxHeight = "60px";
@@ -24,7 +23,6 @@ signupbtn.onclick = function () {
   signinbtn.classList.add("disable");
   save.classList.remove("d-none");
   login.classList.add("d-none");
-
 };
 let name = document.getElementById("name");
 let email = document.getElementById("email");
@@ -85,9 +83,23 @@ save.addEventListener("click", () => {
 
 //login Logic
 
+login.addEventListener("click", () => {
+  let username = email.value;
+  let password = pass.value;
+  let pincode = pin.value;
 
-login.addEventListener("click", ()=>{
-  console.log(email.value)
-  console.log(pin.value)
-  console.log(pass.value)
-})
+  let users = localStorage.getItem("user_creds");
+  users = users === null ? [] : JSON.parse(users);
+
+  let userexists = users.findIndex((value) => {
+    return value.email == username && value.pass == password&& value.pin == pincode;
+  }); //index dega of such user
+
+  if (userexists == -1) {
+    console.log("Invalid Creds");
+  } else {
+    localStorage.setItem("userloginid", userexists);
+    window.location.replace("./complaint.html");
+  }
+});
+

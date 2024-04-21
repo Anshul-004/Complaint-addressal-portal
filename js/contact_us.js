@@ -1,3 +1,20 @@
+//login out button logic
+let navlogin = document.getElementById("navlogin");
+let navlogout = document.getElementById("navlogout");
+
+if (localStorage.getItem("userloginid") != null) {
+  navlogin.classList.add("d-none");
+  navlogout.classList.remove("d-none");
+} else {
+  navlogin.classList.remove("d-none");
+  navlogout.classList.add("d-none");
+}
+
+//logout button
+navlogout.addEventListener("click", () => {
+  localStorage.removeItem("userloginid");
+});
+
 let fname = document.getElementById("fname");
 let lname = document.getElementById("lname");
 let phone = document.getElementById("phone");
