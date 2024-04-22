@@ -106,7 +106,7 @@ login.addEventListener("click", async() => {
 
   if (res.status === 200) {
     localStorage.setItem("adminloginid", 1); //1 ki jagah, it must be id of user
-    window.location.replace("./index.html"); //isko ./admin_index.html krenge for deletions
+    window.location.replace("./admin_index.html"); 
   }
   else{
     alert("Invalid Creds");
