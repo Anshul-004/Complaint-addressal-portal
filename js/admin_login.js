@@ -36,7 +36,7 @@ let pin = document.getElementById("pin")
 let pass = document.getElementById("pass")
 
 let a_details = [];
-save.addEventListener("click", () => {
+save.addEventListener("click", async () => {
   let newAdmin = {
     name: name.value,
     adminCode:acode.value,
@@ -60,51 +60,58 @@ save.addEventListener("click", () => {
     return false;
   }
 
-  a_details = localStorage.getItem("admin_creds");
-  a_details = a_details === null ? [] : JSON.parse(a_details);
-
-  //finds wether new email exists already or not
-  let adminexist = a_details.find((value) => {
-    return value.email === newAdmin.email;
+  //replacing localstorage with mongodb
+  const res = await fetch("http://localhost:3000/adminlogin", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newAdmin),
   });
 
-  if (adminexist == undefined) {
-    a_details.push(newAdmin);
-  } else {
-    console.log("Check EmailID");
-    return false;
+  if (res.status === 409) {
+    alert("Email already exists. Please choose a different email.");
   }
 
-  //user credentials will be updated
-  localStorage.setItem("admin_creds", JSON.stringify(a_details));
-
-  name.value = "";
-  email.value = "";
-  pin.value = "";
-  pass.value = "";
-  acode.value = "";
+  if(res.ok)
+  {
+    name.value = "";
+    email.value = "";
+    pin.value = "";
+    pass.value = "";
+    acode.value = "";
+  }
 });
 
 //login logic
 
-login.addEventListener("click", () => {
+login.addEventListener("click", async() => {
   let username = email.value;
   let password = pass.value;
 
-  let admins = localStorage.getItem("admin_creds");
-  admins = admins === null ? [] : JSON.parse(admins);
+  let logininfo = {
+    username,
+    password,
+  };
 
-  let adminexists = admins.findIndex((value) => {
-
-    return value.email == username && value.pass == password;
-  }); //index dega of such user
-
-  if (adminexists == -1) {
-    console.log("Invalid Creds");
-  } else {
-    localStorage.setItem("adminloginid", adminexists);
-    window.location.replace("./index.html");
+  if (username == "" || password == "") {
+    console.log("Fill all values");
+    return false;
   }
+
+  //replacing localstorage with mongodb
+  const res = await fetch("http://localhost:3000/adminlogincheck", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(logininfo),
+  });
+
+  if (res.status === 200) {
+    localStorage.setItem("adminloginid", 1); //1 ki jagah, it must be id of user
+    window.location.replace("./index.html"); //isko ./admin_index.html krenge for deletions
+  }
+  else{
+    alert("Invalid Creds");
+  }
+
 });
 
 

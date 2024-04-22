@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "kanit", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1a2238;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+/* navbar */
+nav {
+  height: 10vh;
+  background-color: #1a2238;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+}
+
+ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 0.313rem 1.25rem;
+  border: 1px solid transparent;
+  transition: 0.6s ease;
+}
+ul li a:hover {
+  background-color: #eba63f;
+  color: whitesmoke;
+}
+ul li.active a {
+  background-color: #eba63f;
+  color: #f7f4e9;
+}
+.logo {
+  color: #e40c2b;
+  margin-left: 1.5rem;
+}
+.nav-items {
+  margin-right: 1.5rem;
+}
+
+/* body */
+.d-none {
+  display: none;
+}
+
+.card-parent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.card-body {
+  padding: 1rem;
+  margin: 3rem;
+  background-color: #293657;
+  height: 40vh;
+  width: 38vw;
+  border-radius: 7px;
+  overflow: scroll;
+}
+
+.card-body h2 {
+  color: #e11433;
+  text-align: center;
+  font-size: 2rem;
+}
+.card-body p {
+  color: #eba63f;
+  text-align: center;
+}
+.card-body button {
+  margin-top: 1rem;
+  float: right;
+  background-color: #2eb231;
+  outline: none;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.card-body button:active {
+  color: white;
+}

@@ -36,6 +36,7 @@ submit.addEventListener("click", async () => {
     state: state.value,
     city: city.value,
     issue: issue.value,
+    id:Date.now(),
   };
 
   if (

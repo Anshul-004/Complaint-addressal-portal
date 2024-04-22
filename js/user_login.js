@@ -32,7 +32,7 @@ let cpass = document.getElementById("cpass");
 
 //Registration Logic
 let u_details = [];
-save.addEventListener("click", () => {
+save.addEventListener("click", async () => {
   let newUser = {
     name: name.value,
     email: email.value,
@@ -55,50 +55,56 @@ save.addEventListener("click", () => {
     console.log("Try Again");
     return false;
   }
-
-  u_details = localStorage.getItem("user_creds");
-  u_details = u_details === null ? [] : JSON.parse(u_details);
-
-  //finds wether new email exists already or not
-  let userexist = u_details.find((value) => {
-    return value.email === newUser.email;
+  //replacing localstorage with mongodb
+  const res = await fetch("http://localhost:3000/userlogin", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newUser),
   });
 
-  if (userexist == undefined) {
-    u_details.push(newUser);
-  } else {
-    console.log("Check EmailID");
-    return false;
+  if (res.status === 409) {
+    alert("Email already exists. Please choose a different email.");
   }
-
-  //user credentials will be updated
-  localStorage.setItem("user_creds", JSON.stringify(u_details));
-
-  name.value = "";
-  email.value = "";
-  pin.value = "";
-  pass.value = "";
-  cpass.value = "";
+  if (res.ok) {
+    name.value = "";
+    email.value = "";
+    pin.value = "";
+    pass.value = "";
+    cpass.value = "";
+  }
 });
 
 //login Logic
 
-login.addEventListener("click", () => {
+login.addEventListener("click", async () => {
   let username = email.value;
   let password = pass.value;
   let pincode = pin.value;
 
-  let users = localStorage.getItem("user_creds");
-  users = users === null ? [] : JSON.parse(users);
+  let logininfo = {
+    username,
+    password,
+    pincode,
+  };
 
-  let userexists = users.findIndex((value) => {
-    return value.email == username && value.pass == password&& value.pin == pincode;
-  }); //index dega of such user
+  if (username == "" || password == "" || pincode == "") {
+    console.log("Fill all values");
+    return false;
+  }
 
-  if (userexists == -1) {
-    console.log("Invalid Creds");
-  } else {
-    localStorage.setItem("userloginid", userexists);
+  //replacing localstorage with mongodb
+  const res = await fetch("http://localhost:3000/userlogincheck", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(logininfo),
+  });
+
+  if (res.status === 200) {
+    localStorage.setItem("userloginid", 1); //1 ki jagah, it must be id of user
     window.location.replace("./complaint.html");
   }
+  else{
+    alert("Invalid Creds");
+  }
+
 });
