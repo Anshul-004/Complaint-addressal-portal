@@ -15,3 +15,13 @@ navlogout.addEventListener("click", () => {
   localStorage.removeItem("userloginid");
   localStorage.removeItem("adminloginid");
 });
+
+//admin panel logic
+let adcomp = document.getElementById("adcomp")
+if(localStorage.getItem("adminloginid") == 1)
+{
+  adcomp.classList.remove("d-none")
+}
+else{
+  adcomp.classList.add("d-none")
+}

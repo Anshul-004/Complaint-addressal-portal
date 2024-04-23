@@ -75,3 +75,14 @@ submit.addEventListener("click", async () => {
 cancel.addEventListener("click", () => {
     window.location.replace("./index.html");
 });
+
+
+//admin panel logic
+let adcomp = document.getElementById("adcomp")
+if(localStorage.getItem("adminloginid") == 1)
+{
+  adcomp.classList.remove("d-none")
+}
+else{
+  adcomp.classList.add("d-none")
+}
