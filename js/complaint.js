@@ -2,7 +2,10 @@
 let navlogin = document.getElementById("navlogin");
 let navlogout = document.getElementById("navlogout");
 
-if (localStorage.getItem("userloginid") != null|| localStorage.getItem("adminloginid") != null) {
+if (
+  localStorage.getItem("userloginid") != null ||
+  localStorage.getItem("adminloginid") != null
+) {
   navlogin.classList.add("d-none");
   navlogout.classList.remove("d-none");
 } else {
@@ -36,7 +39,7 @@ submit.addEventListener("click", async () => {
     state: state.value,
     city: city.value,
     issue: issue.value,
-    id:Date.now(),
+    id: Date.now(),
   };
 
   if (
@@ -48,19 +51,20 @@ submit.addEventListener("click", async () => {
     city.value == "" ||
     issue.value == ""
   ) {
+    toasterdanger("Fill all the Fields");
     return false;
   }
 
   // local storage replaced with MongoDB
 
-  const res = await fetch('http://localhost:3000/submit', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+  const res = await fetch("http://localhost:3000/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newInfo),
   });
 
   //reseting values
-  if(res.ok)
+  if (res.ok) toastersuccess("Complaint Registered Successfully");
   {
     fname.value = "";
     lname.value = "";
@@ -73,16 +77,13 @@ submit.addEventListener("click", async () => {
 });
 
 cancel.addEventListener("click", () => {
-    window.location.replace("./index.html");
+  window.location.replace("./index.html");
 });
 
-
 //admin panel logic
-let adcomp = document.getElementById("adcomp")
-if(localStorage.getItem("adminloginid") == 1)
-{
-  adcomp.classList.remove("d-none")
-}
-else{
-  adcomp.classList.add("d-none")
+let adcomp = document.getElementById("adcomp");
+if (localStorage.getItem("adminloginid") == 1) {
+  adcomp.classList.remove("d-none");
+} else {
+  adcomp.classList.add("d-none");
 }

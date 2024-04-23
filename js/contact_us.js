@@ -2,7 +2,10 @@
 let navlogin = document.getElementById("navlogin");
 let navlogout = document.getElementById("navlogout");
 
-if (localStorage.getItem("userloginid") != null|| localStorage.getItem("adminloginid") != null) {
+if (
+  localStorage.getItem("userloginid") != null ||
+  localStorage.getItem("adminloginid") != null
+) {
   navlogin.classList.add("d-none");
   navlogout.classList.remove("d-none");
 } else {
@@ -40,19 +43,19 @@ btn.addEventListener("click", async () => {
     email.value == "" ||
     feedback.value == ""
   ) {
+    toasterdanger("Fill all the Fields");
     return false;
   }
 
   //replacing localstorage with mongodb
-  const res = await fetch('http://localhost:3000/contact', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+  const res = await fetch("http://localhost:3000/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newfeedback),
   });
 
-  if(res.ok)
-  {
-    //resetting the fields
+  if (res.ok) {
+    toastersuccess("We'll get back to you soon");
     fname.value = "";
     lname.value = "";
     phone.value = "";
@@ -62,11 +65,9 @@ btn.addEventListener("click", async () => {
 });
 
 //admin panel logic
-let adcomp = document.getElementById("adcomp")
-if(localStorage.getItem("adminloginid") == 1)
-{
-  adcomp.classList.remove("d-none")
-}
-else{
-  adcomp.classList.add("d-none")
+let adcomp = document.getElementById("adcomp");
+if (localStorage.getItem("adminloginid") == 1) {
+  adcomp.classList.remove("d-none");
+} else {
+  adcomp.classList.add("d-none");
 }

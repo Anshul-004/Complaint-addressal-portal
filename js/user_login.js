@@ -47,12 +47,12 @@ save.addEventListener("click", async () => {
     pass.value == "" ||
     cpass.value == ""
   ) {
-    console.log("Fill all values");
+    toasterdanger("Fill all the Fields");
     return false;
   }
 
   if (pass.value != cpass.value) {
-    console.log("Try Again");
+    toasterdanger("Password and Confirm Password must be same");
     return false;
   }
   //replacing localstorage with mongodb
@@ -63,9 +63,10 @@ save.addEventListener("click", async () => {
   });
 
   if (res.status === 409) {
-    alert("Email already exists. Please choose a different email.");
+    toasterdanger("Email already exists, try another one !");
   }
   if (res.ok) {
+    toastersuccess("Registration Successful");
     name.value = "";
     email.value = "";
     pin.value = "";
@@ -88,7 +89,7 @@ login.addEventListener("click", async () => {
   };
 
   if (username == "" || password == "" || pincode == "") {
-    console.log("Fill all values");
+    toasterdanger("Fill all the Fields");
     return false;
   }
 
@@ -100,11 +101,12 @@ login.addEventListener("click", async () => {
   });
 
   if (res.status === 200) {
+    toastersuccess("Logged In Successfully");
     localStorage.setItem("userloginid", 1); //1 ki jagah, it must be id of user
-    window.location.replace("./complaint.html");
+    setTimeout(() => {
+      window.location.replace("./complaint.html");
+    }, 500);
+  } else {
+    toasterdanger("Invalid Username or Password");
   }
-  else{
-    alert("Invalid Creds");
-  }
-
 });
