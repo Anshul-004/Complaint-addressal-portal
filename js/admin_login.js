@@ -51,12 +51,12 @@ save.addEventListener("click", async () => {
     pin.value == "" ||
     pass.value == ""
   ) {
-    console.log("Fill all values");
+    toasterdanger("Fill all the Fields");
     return false;
   }
 
   if (acode.value != 6969) {
-    console.log("Unauthorised Access");
+    toasterdanger("Incorrect Admin Code");
     return false;
   }
 
@@ -68,11 +68,12 @@ save.addEventListener("click", async () => {
   });
 
   if (res.status === 409) {
-    alert("Email already exists. Please choose a different email.");
+    toasterdanger("Email already exists, Try another one !");
   }
 
   if(res.ok)
   {
+    toastersuccess("Admin Registered Successfully")
     name.value = "";
     email.value = "";
     pin.value = "";
@@ -82,7 +83,6 @@ save.addEventListener("click", async () => {
 });
 
 //login logic
-
 login.addEventListener("click", async() => {
   let username = email.value;
   let password = pass.value;
@@ -93,7 +93,7 @@ login.addEventListener("click", async() => {
   };
 
   if (username == "" || password == "") {
-    console.log("Fill all values");
+    toasterdanger("Fill all the Fields");
     return false;
   }
 
@@ -105,11 +105,14 @@ login.addEventListener("click", async() => {
   });
 
   if (res.status === 200) {
+    toastersuccess("Logged In Successfully")
     localStorage.setItem("adminloginid", 1); //1 ki jagah, it must be id of user
-    window.location.replace("./admin_index.html"); 
+    setTimeout(() => {
+      window.location.replace("./admin_index.html"); 
+    }, 500);
   }
   else{
-    alert("Invalid Creds");
+    toasterdanger("Invalid Credentials")
   }
 
 });

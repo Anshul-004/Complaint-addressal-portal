@@ -69,10 +69,10 @@ function delelement() {
         body: JSON.stringify({id}),
       });
       if (req.ok) {
-        alert("DELETED ITEMS");
+        toastersuccess("Issue Marked As Resolved")
         getissues();
       } else {
-        console.log("Error Occured");
+        toasterdanger("Can't Solve the Issue")
       }
     });
   });

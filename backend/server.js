@@ -52,8 +52,6 @@ app.post("/userlogin", async (req, res) => {
 
   try {
     const client = await MongoClient.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
     });
     const database = client.db("ComplaintsDB");
     const collection = database.collection("userlogins");
@@ -81,8 +79,6 @@ app.post("/userlogincheck", async (req, res) => {
 
   try {
     const client = await MongoClient.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
     });
     const database = client.db("ComplaintsDB");
     const collection = database.collection("userlogins");
@@ -111,8 +107,6 @@ app.post("/adminlogin", async (req, res) => {
 
   try {
     const client = await MongoClient.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
     });
     const database = client.db("ComplaintsDB");
     const collection = database.collection("adminlogins");
@@ -140,8 +134,6 @@ app.post("/adminlogincheck", async (req, res) => {
 
   try {
     const client = await MongoClient.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
     });
     const database = client.db("ComplaintsDB");
     const collection = database.collection("adminlogins");
