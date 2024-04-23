@@ -74,10 +74,11 @@ app.post("/userlogin", async (req, res) => {
 
 //gets data of userlogin form to database
 app.post("/userlogincheck", async (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, pincode } = req.body;
   const uri = "mongodb://localhost:27017/userlogincheck";
 
   try {
+    
     const client = await MongoClient.connect(uri, {
     });
     const database = client.db("ComplaintsDB");
@@ -88,8 +89,12 @@ app.post("/userlogincheck", async (req, res) => {
     if (!user) {
       return res.status(401).json({ message: "Invalid email or password" });
     }
-
     if (user.pass != password) {
+      return res.status(401).json({ message: "Invalid email or password" });
+    }
+    
+    if (user.pin != pincode) {
+
       return res.status(401).json({ message: "Invalid email or password" });
     }
 

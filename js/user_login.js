@@ -107,6 +107,6 @@ login.addEventListener("click", async () => {
       window.location.replace("./complaint.html");
     }, 500);
   } else {
-    toasterdanger("Invalid Username or Password");
+    toasterdanger("Invalid Username, Password or PIN");
   }
 });
