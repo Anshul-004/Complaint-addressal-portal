@@ -1,3 +1,6 @@
+if (localStorage.getItem("adminloginid") != 1) {
+  window.location.replace("./index.html");
+}
 //login out button logic
 let navlogin = document.getElementById("navlogin");
 let navlogout = document.getElementById("navlogout");
@@ -66,13 +69,13 @@ function delelement() {
       const req = await fetch("http://localhost:3000/resolve", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({id}),
+        body: JSON.stringify({ id }),
       });
       if (req.ok) {
-        toastersuccess("Issue Marked As Resolved")
+        toastersuccess("Issue Marked As Resolved");
         getissues();
       } else {
-        toasterdanger("Can't Solve the Issue")
+        toasterdanger("Can't Solve the Issue");
       }
     });
   });

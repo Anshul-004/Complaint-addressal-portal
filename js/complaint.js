@@ -1,3 +1,13 @@
+if (
+  localStorage.getItem("userloginid") != 1 &&
+  localStorage.getItem("adminloginid") != 1
+) {
+  toasterdanger("Login First");
+  setTimeout(() => {
+    window.location.replace("./login.html");
+  }, 500);
+}
+
 //login out button logic
 let navlogin = document.getElementById("navlogin");
 let navlogout = document.getElementById("navlogout");
