@@ -23,6 +23,15 @@ if (
   navlogout.classList.add("d-none");
 }
 
+//admin panel logic
+let adcomp = document.getElementById("adcomp");
+if (localStorage.getItem("adminloginid") != null) {
+  adcomp.classList.remove("d-none");
+} else {
+  adcomp.classList.add("d-none");
+}
+
+
 //logout button
 navlogout.addEventListener("click", () => {
   localStorage.removeItem("userloginid");

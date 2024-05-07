@@ -27,6 +27,14 @@ navlogout.addEventListener("click", () => {
   toastersuccess("Logged Out");
 });
 
+//admin panel logic
+let adcomp = document.getElementById("adcomp");
+if (localStorage.getItem("adminloginid") != null) {
+  adcomp.classList.remove("d-none");
+} else {
+  adcomp.classList.add("d-none");
+}
+
 //Complaint Cards
 let card = document.getElementById("parent");
 
