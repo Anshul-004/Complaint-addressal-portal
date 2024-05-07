@@ -94,3 +94,7 @@ ul li.active a {
 .card-body button:active {
   color: white;
 }
+
+.d-none{
+  display: none;
+}

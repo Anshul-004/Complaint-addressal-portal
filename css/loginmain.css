@@ -81,3 +81,6 @@ ul li.active a {
   background-color: white;
   color: black;
 }
+.d-none{
+  display: none;
+}
