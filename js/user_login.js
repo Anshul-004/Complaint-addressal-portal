@@ -74,6 +74,8 @@ save.addEventListener("click", () => {
   //user credentials will be updated
   localStorage.setItem("user_creds", JSON.stringify(u_details));
 
+  toastersuccess("Registered Successfully")
+  
   name.value = "";
   email.value = "";
   pin.value = "";

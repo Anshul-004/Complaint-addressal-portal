@@ -71,6 +71,7 @@ submit.addEventListener("click", () => {
   oldInfo.push(newInfo);
 
   localStorage.setItem("complaints", JSON.stringify(oldInfo));
+  toastersuccess("Complaint Registered")
 
   //reseting values
   fname.value = "";
