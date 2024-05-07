@@ -14,4 +14,5 @@ if (localStorage.getItem("userloginid") != null|| localStorage.getItem("adminlog
 navlogout.addEventListener("click", () => {
   localStorage.removeItem("userloginid");
   localStorage.removeItem("adminloginid");
+  toastersuccess("Logged Out");
 });

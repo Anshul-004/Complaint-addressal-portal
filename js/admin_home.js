@@ -2,9 +2,11 @@
 let navlogin = document.getElementById("navlogin");
 let navlogout = document.getElementById("navlogout");
 
-if(localStorage.getItem("adminloginid") == null)
-{
+if (localStorage.getItem("adminloginid") == null) {
+  toasterdanger("Admin Access Only !");
+  setTimeout(() => {
     window.location.replace("./index.html");
+  }, 500);
 }
 
 if (
@@ -22,6 +24,7 @@ if (
 navlogout.addEventListener("click", () => {
   localStorage.removeItem("userloginid");
   localStorage.removeItem("adminloginid");
+  toastersuccess("Logged Out");
 });
 
 //Complaint Cards
@@ -73,6 +76,7 @@ function delelement() {
       });
       localStorage.setItem("complaints", JSON.stringify(newdata));
       printdata();
+      toastersuccess("Resolved Complaint");
     });
   });
 }

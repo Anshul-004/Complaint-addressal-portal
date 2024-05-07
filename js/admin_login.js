@@ -51,12 +51,12 @@ save.addEventListener("click", () => {
     pin.value == "" ||
     pass.value == ""
   ) {
-    console.log("Fill all values");
+    toasterdanger("Fill all values");
     return false;
   }
 
   if (acode.value != 6969) {
-    console.log("Unauthorised Access");
+    toasterdanger("Unauthorised Access");
     return false;
   }
 
@@ -71,7 +71,7 @@ save.addEventListener("click", () => {
   if (adminexist == undefined) {
     a_details.push(newAdmin);
   } else {
-    console.log("Check EmailID");
+    toasterdanger("Email Already Exists");
     return false;
   }
 
@@ -91,6 +91,12 @@ login.addEventListener("click", () => {
   let username = email.value;
   let password = pass.value;
 
+  if(username == "" || password == "")
+    {
+      toasterdanger("Fill all the fields !");
+      return false;
+    }
+
   let admins = localStorage.getItem("admin_creds");
   admins = admins === null ? [] : JSON.parse(admins);
 
@@ -100,10 +106,13 @@ login.addEventListener("click", () => {
   }); //index dega of such user
 
   if (adminexists == -1) {
-    console.log("Invalid Creds");
+    toasterdanger("Invalid Credentials");
   } else {
     localStorage.setItem("adminloginid", adminexists);
-    window.location.replace("./admin_home.html");
+    toastersuccess("Logged In as Admin")
+    setTimeout(() => {
+      window.location.replace("./admin_home.html");
+    }, 500);
   }
 });
 

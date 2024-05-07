@@ -1,8 +1,21 @@
+if (
+  localStorage.getItem("userloginid") != 1 &&
+  localStorage.getItem("adminloginid") != 1
+) {
+  toasterdanger("Login First");
+  setTimeout(() => {
+    window.location.replace("./login.html");
+  }, 500);
+}
+
 //login out button logic
 let navlogin = document.getElementById("navlogin");
 let navlogout = document.getElementById("navlogout");
 
-if (localStorage.getItem("userloginid") != null|| localStorage.getItem("adminloginid") != null) {
+if (
+  localStorage.getItem("userloginid") != null ||
+  localStorage.getItem("adminloginid") != null
+) {
   navlogin.classList.add("d-none");
   navlogout.classList.remove("d-none");
 } else {
@@ -36,7 +49,7 @@ submit.addEventListener("click", () => {
     state: state.value,
     city: city.value,
     issue: issue.value,
-    id:Date.now(),
+    id: Date.now(),
   };
 
   if (
@@ -48,6 +61,7 @@ submit.addEventListener("click", () => {
     city.value == "" ||
     issue.value == ""
   ) {
+    toasterdanger("Fill out all the fields")
     return false;
   }
 
@@ -69,5 +83,5 @@ submit.addEventListener("click", () => {
 });
 
 cancel.addEventListener("click", () => {
-    window.location.replace("./index.html");
+  window.location.replace("./index.html");
 });

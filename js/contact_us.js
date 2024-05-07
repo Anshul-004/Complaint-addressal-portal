@@ -40,6 +40,7 @@ btn.addEventListener("click", () => {
     email.value == "" ||
     feedback.value == ""
   ) {
+    toasterdanger("Fill out all the fields")
     return false;
   }
 
@@ -50,6 +51,8 @@ btn.addEventListener("click", () => {
   //   console.log(newfeedback); //current values
 
   localStorage.setItem("contact", JSON.stringify(u_feed));
+
+  toastersuccess("We'll get back to you !")
 
   //resetting the fields
   fname.value = "";

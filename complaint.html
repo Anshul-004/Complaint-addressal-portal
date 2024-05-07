@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
 
@@ -31,38 +32,40 @@
     </nav>
 
     <div class="container">
-            <div class="input-group">
-                <h1 id="title">Personal Information</h1>
-                <form>
-                    <div class="input-field" id="fnamefield">
-                        <input type="text" placeholder="First Name" id="fname">
-                        <input type="text" placeholder="Last Name" id="lname">
-                    </div>
+        <div class="input-group">
+            <h1 id="title">Personal Information</h1>
+            <form>
+                <div class="input-field" id="fnamefield">
+                    <input type="text" placeholder="First Name" id="fname">
+                    <input type="text" placeholder="Last Name" id="lname">
+                </div>
 
-                    <div class="input-field">
-                        <input type="email" placeholder="Email" id="email">
-                    </div>
+                <div class="input-field">
+                    <input type="email" placeholder="Email" id="email">
+                </div>
 
-                    <div class="input-field">
-                        <input type="text" placeholder="State" required id="state">
-                        <input type="text" placeholder="City" required id="city">
-                    </div>
+                <div class="input-field">
+                    <input type="text" placeholder="State" required id="state">
+                    <input type="text" placeholder="City" required id="city">
+                </div>
 
-                    <div class="input-field">
-                        <input type="tel" placeholder="Pincode" required id="pin">
-                    </div>
+                <div class="input-field">
+                    <input type="tel" placeholder="Pincode" required id="pin">
+                </div>
 
-                    <h1 id="title">Complaint Information</h1>
+                <h1 id="title">Complaint Information</h1>
 
-                    <textarea name="txtMsg" class=form-box placeholder="Complaint Description" id="issue"></textarea>
+                <textarea name="txtMsg" class=form-box placeholder="Complaint Description" id="issue"></textarea>
 
-                    <div class="btn-field">
-                        <button type="button" id="submit">Submit</button>
-                        <button type="button" id="cancel">Cancel</button>
-                    </div>
-                </form>
-            </div>
+                <div class="btn-field">
+                    <button type="button" id="submit">Submit</button>
+                    <button type="button" id="cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/utils.js"></script>
     <script src="./js/complaint.js"></script>
 </body>
 

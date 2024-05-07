@@ -47,7 +47,7 @@ save.addEventListener("click", () => {
     pass.value == "" ||
     cpass.value == ""
   ) {
-    console.log("Fill all values");
+    toasterdanger("Fill all values");
     return false;
   }
 
@@ -67,7 +67,7 @@ save.addEventListener("click", () => {
   if (userexist == undefined) {
     u_details.push(newUser);
   } else {
-    console.log("Check EmailID");
+    toasterdanger("Email Already Exists");
     return false;
   }
 
@@ -87,6 +87,11 @@ login.addEventListener("click", () => {
   let username = email.value;
   let password = pass.value;
   let pincode = pin.value;
+  if(username == "" || password == "" || pincode == "")
+    {
+      toasterdanger("Fill all the fields !");
+      return false;
+    }
 
   let users = localStorage.getItem("user_creds");
   users = users === null ? [] : JSON.parse(users);
@@ -96,9 +101,12 @@ login.addEventListener("click", () => {
   }); //index dega of such user
 
   if (userexists == -1) {
-    console.log("Invalid Creds");
+    toasterdanger("Invalid Credentials");
   } else {
     localStorage.setItem("userloginid", userexists);
-    window.location.replace("./complaint.html");
+    toastersuccess("Logged in Successfully");
+    setTimeout(() => {
+      window.location.replace("./complaint.html");
+    }, 500);
   }
 });
