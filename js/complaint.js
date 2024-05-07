@@ -1,6 +1,6 @@
 if (
-  localStorage.getItem("userloginid") != 1 &&
-  localStorage.getItem("adminloginid") != 1
+  localStorage.getItem("userloginid") == null &&
+  localStorage.getItem("adminloginid") == null
 ) {
   toasterdanger("Login First");
   setTimeout(() => {
