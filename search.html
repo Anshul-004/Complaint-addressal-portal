@@ -4,7 +4,7 @@
 <head>
     <title>Home</title>
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/search.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -21,16 +21,23 @@
         <div class="nav-items">
             <ul>
                 <li class="d-none" id="adcomp"><a href="./admin_index.html">Listed Complaints</a></li>
-                <li class="active"><a href="./index.html">Home</a></li>
+                <li ><a href="./index.html">Home</a></li>
                 <li><a href="./complaint.html">Report Complaint</a></li>
                 <li><a href="./contact_us.html">Contact Us</a></li>
                 <li><a href="./about_us.html">About Us</a></li>
-                <li><a href="./search.html">Search</a></li>
+                <li class="active"><a href="./search.html">Search</a></li>
                 <li id="navlogin"><a href="./login.html">Login</a></li>
                 <li class="d-none" id="navlogout"><a href="./index.html">Logout</a></li>
             </ul>
         </div>
     </nav>
+
+    <section class="searchbar">
+        <div class="search-container">
+            <input type="text" placeholder="Search..." id="searchbox">
+            <button type="button" id="sbtn">Search</button>
+        </div>
+    </section>
 
     <section class="card-parent" id="parent">
         <!-- card starts -->
@@ -41,7 +48,7 @@
         <!-- card ends -->
     </section>
 
-    <script src="./js/index.js"></script>
+    <script src="./js/search.js"></script>
 </body>
 
 </html>
