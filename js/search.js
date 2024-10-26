@@ -33,12 +33,17 @@ else{
 let card = document.getElementById("parent");
 let searchval = document.getElementById("searchbox")
 let sbtn = document.getElementById("sbtn")
+
+searchval.value = localStorage.getItem("search");
+
+
 //localstorage to MongoDB
 const getissues = async () => {
   let req = await fetch("http://localhost:3000/");
   let issues = await req.json();
 
   sbtn.addEventListener("click", async() => {
+    localStorage.setItem("search", searchval.value);
     window.location.reload();
   })
   

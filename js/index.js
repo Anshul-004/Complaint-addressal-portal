@@ -20,18 +20,21 @@ navlogout.addEventListener("click", () => {
 });
 
 //admin panel logic
-let adcomp = document.getElementById("adcomp")
-if(localStorage.getItem("adminloginid") == 1)
-{
-  adcomp.classList.remove("d-none")
-}
-else{
-  adcomp.classList.add("d-none")
+let adcomp = document.getElementById("adcomp");
+if (localStorage.getItem("adminloginid") == 1) {
+  adcomp.classList.remove("d-none");
+} else {
+  adcomp.classList.add("d-none");
 }
 
 //Complaint Cards
 let card = document.getElementById("parent");
-
+let sbtn = document.getElementById("sbtn");
+let searchval = document.getElementById("searchbox");
+sbtn.addEventListener("click", async () => {
+  localStorage.setItem("search", searchval.value);
+  window.location.replace("./search.html");
+});
 //localstorage to MongoDB
 const getissues = async () => {
   let req = await fetch("http://localhost:3000/");
