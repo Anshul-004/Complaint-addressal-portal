@@ -159,6 +159,28 @@ app.post("/adminlogincheck", async (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   } 
 });
+//updates the data of a complaint in the database
+app.put("/updateComplaint", async (req, res) => {
+  const { id, firstname, lastName, city, state, pin, email, issue } = req.body;
+  const db = client.db(dbName);
+  const collection = db.collection("complaints");
+
+  try {
+    const result = await collection.updateOne(
+      { id: parseInt(id) },
+      { $set: { firstname, lastName, city, state, pin, email, issue } }
+    );
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ message: "Complaint not found" });
+    }
+
+    res.status(200).json({ message: "Complaint updated successfully", result });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
 
 //deletes the data
 app.delete("/resolve", async (req, res) => {
