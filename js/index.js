@@ -57,6 +57,9 @@ const getissues = async () => {
       <strong>Issue Faced - </strong>
       ${value.issue}
   </p>
+  <p>
+      <button type="button" id="upd" data-id="${value.id}">Edit</button>
+  </p>
 </div>`;
   });
 
@@ -64,4 +67,26 @@ const getissues = async () => {
 };
 
 //function call
-getissues();
+// getissues();
+
+function update() {
+  console.log("WORKS");
+  let updatebtn = document.querySelectorAll("#upd");
+
+  updatebtn.forEach((value) => {
+    value.addEventListener("click", async () => {
+      let id = value.dataset.id;
+      console.log(id); //returns id as number.
+
+      localStorage.setItem("updateid", id);
+      window.location.replace("./update.html")
+    });
+  });
+}
+
+let main = async () => {
+  await getissues();
+  update();
+};
+
+main();
