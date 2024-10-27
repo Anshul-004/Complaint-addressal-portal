@@ -112,6 +112,7 @@ submit.addEventListener("click", async () => {
     city.value = "";
     issue.value = "";
   }
+  window.location.replace("./index.html")
 });
 
 cancel.addEventListener("click", () => {
