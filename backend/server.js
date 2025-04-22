@@ -6,11 +6,9 @@ const cors = require("cors");
 
 dotenv.config();
 
-// Connection URL
-const url = "mongodb://localhost:27017";
+const url = "mongodb://127.0.0.1:27017";
 const client = new MongoClient(url);
 
-//creating new database if not exists
 const dbName = "ComplaintsDB";
 const app = express();
 const port = 3000;
@@ -18,8 +16,6 @@ app.use(bodyparser.json());
 app.use(cors());
 client.connect();
 
-
-//gets the data
 app.get("/", async (req, res) => {
   const db = client.db(dbName);
   const collection = db.collection("complaints");
@@ -48,7 +44,7 @@ app.post("/contact", async (req, res) => {
 //posts data of user login form to database
 app.post("/userlogin", async (req, res) => {
   const newUser = req.body;
-  const uri = "mongodb://localhost:27017/userlogin";
+  const uri = "mongodb://127.0.0.1:27017/userlogin";
 
   try {
     const client = await MongoClient.connect(uri, {
@@ -56,13 +52,12 @@ app.post("/userlogin", async (req, res) => {
     const database = client.db("ComplaintsDB");
     const collection = database.collection("userlogins");
 
-    // Check if email already exists with findOne()
     const existingUser = await collection.findOne({ email: newUser.email });
 
     if (existingUser) {
       return res.status(409).json({ message: "Email already exists" });
     }
-    // Insert new user if email doesn't exist
+
     const result = await collection.insertOne(newUser);
     console.log("User created successfully!", result);
     res.status(201).json({ message: "User created successfully!" });
@@ -72,10 +67,10 @@ app.post("/userlogin", async (req, res) => {
   } 
 });
 
-//gets data of userlogin form to database
+
 app.post("/userlogincheck", async (req, res) => {
   const { username, password, pincode } = req.body;
-  const uri = "mongodb://localhost:27017/userlogincheck";
+  const uri = "mongodb://127.0.0.1:27017/userlogincheck";
 
   try {
     
@@ -108,7 +103,7 @@ app.post("/userlogincheck", async (req, res) => {
 //posts data of admin login form to database
 app.post("/adminlogin", async (req, res) => {
   const newAdmin = req.body;
-  const uri = "mongodb://localhost:27017/adminlogin";
+  const uri = "mongodb://127.0.0.1:27017/adminlogin";
 
   try {
     const client = await MongoClient.connect(uri, {
@@ -135,7 +130,7 @@ app.post("/adminlogin", async (req, res) => {
 //checks data of adminlogin form to database
 app.post("/adminlogincheck", async (req, res) => {
   const { username, password } = req.body;
-  const uri = "mongodb://localhost:27017/adminlogincheck";
+  const uri = "mongodb://127.0.0.1:27017/adminlogincheck";
 
   try {
     const client = await MongoClient.connect(uri, {
@@ -194,5 +189,5 @@ app.delete("/resolve", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Complaint Website listening on port http://localhost:${port}`);
+  console.log(`Complaint Website listening on port http://127.0.0.1:${port}`);
 });
