@@ -39,7 +39,7 @@ save.addEventListener("click", async () => {
     pin: pin.value,
     pass: pass.value,
   };
-
+  console.log(newUser);
   if (
     name.value == "" ||
     email.value == "" ||
